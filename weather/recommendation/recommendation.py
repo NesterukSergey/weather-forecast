@@ -17,4 +17,6 @@ def get_recom(df):
     if df['uv'] > 5:
         recom += 'Стоит взять солнцезащитные очки.\n'
 
+    recom += 'Но лучше сидеть дома.\n'
+
     return recom
