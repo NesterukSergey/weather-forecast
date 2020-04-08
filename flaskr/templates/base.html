@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Smart Weather Forecast</title>
+    <link rel="stylesheet" href="../static/reset.css">
+    <script src="../static/view.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1 class="jumbotron text-center">Smart Weather Forecast</h1>
+    <div id="city-error" class="alert alert-danger">
+        <strong>Ошибка!</strong> Такой город не найден!
+    </div>
+    <div id="service-error" class="alert alert-warning">
+        <strong>Ошибка!</strong> Сервис временно недоступен :(
+    </div>
+    <div id="station-error" class="alert alert-warning">
+        <strong>Ошибка!</strong> Метеостанция временно недоступна :(
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="request" class="col-lg-6">
+                <form onsubmit="return getForecast();" action="" method="post" name="city">
+                    {{ form.csrf_token }}
+                    {{ form.city(size=20) }}
+                    <input type="submit" value="Go!">
+                </form>
+            </div>
+            <div id="response" class="col-lg-6">
+                Температура: <p id="temp"></p>
+                Влажность: <p id="hum"></p>
+                Вероятность осадков: <p id="precip"></p>
+                Скорость ветра: <p id="wind"></p>
+                Описание: <p id="forecast"></p>
+                <p id="icon"></p>
+            </div>
+        </div>
+        <div class="row text-center">
+            Рекомендация:  <p id="recom"></p>
+        </div>
+    </div>
+
+</body>
+</html>

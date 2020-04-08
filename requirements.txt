@@ -1,0 +1,8 @@
+Flask
+WTForms
+Flask-WTF
+Flask-Ext
+Flask-Bootstrap
+requests
+Werkzeug==0.14.1
+numpy
